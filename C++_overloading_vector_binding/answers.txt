@@ -1,0 +1,208 @@
+a)     Differentiate between Function Overloading & function templates with the help of one programming example
+
+In C++ two or more functions are having same name and different number or different type of parameters then the functions are said to be in overloaded. Its considered as an example of polymorphism.
+
+For example: 
+
+#include <iostream> 
+using namespace std; 
+
+void show(int i) { 
+cout << " Here is int " << i << endl; 
+} 
+void show(double f) { 
+cout << " Here is float " << f << endl; 
+} 
+void show(char const *c) { 
+cout << " Here is char* " << c << endl; 
+} 
+
+int main() { 
+show(10); 
+show(10.10); 
+show("ten"); 
+return 0; 
+}
+
+
+In c++ template is a useful tool. It increase the code reusebility, because it pass data type as a parameter. For example, a software company may need sort() for different data types.
+Rather than writing and maintaining the multiple codes, we can write one sort() and pass data type as a parameter. 
+
+For Example:
+
+#include <iostream> 
+using namespace std; 
+
+// One function works for all data types. This would work 
+// even for user defined types if operator '>' is overloaded 
+template <typename T> 
+T max_value(T x, T y) 
+{ 
+return (x > y)? x: y; 
+} 
+
+int main() 
+{ 
+cout << max_value<int>(3, 7) << endl; // Call max_value for int 
+cout << max_value<double>(3.0, 7.0) << endl; // call max_value for double 
+cout << max_value<char>('g', 'e') << endl; // call max_value for char 
+
+return 0; 
+}
+
+****************************
+b)     Differentiate between this pointer & new keyword in C++, also explain when do we use these keywords?
+
+Every object in C++ can access its own address by invoking this pointer. 
+The this pointer is an implicit parameter to all member functions. Therefore, inside a member function, this may be used to refer to the invoking object.
+
+Only the class member function can only use this pointer, friend function could not use the this pointer (friend function is not a member function in a class)
+
+Let us try the following example to understand the concept of this pointer −
+
+#include <iostream>
+ 
+using namespace std;
+
+class Box {
+   public:
+      // Constructor definition
+      Box(double l = 2.0, double b = 2.0, double h = 2.0) {
+         cout <<"Constructor called." << endl;
+         length = l;
+         breadth = b;
+         height = h;
+      }
+      double Volume() {
+         return length * breadth * height;
+      }
+      int compare(Box box) {
+         return this->Volume() > box.Volume();
+      }
+      
+   private:
+      double length;     // Length of a box
+      double breadth;    // Breadth of a box
+      double height;     // Height of a box
+};
+
+int main(void) {
+   Box Box1(3.3, 1.2, 1.5);    // Declare box1
+   Box Box2(8.5, 6.0, 2.0);    // Declare box2
+
+   if(Box1.compare(Box2)) {
+      cout << "Box2 is smaller than Box1" <<endl;
+   } else {
+      cout << "Box2 is equal to or larger than Box1" <<endl;
+   }
+   
+   return 0;
+}
+
+new keyword is used to allocate memory for a C++ class object, the object's constructor is called after the memory is allocated. 
+Use the delete operator to deallocate the memory allocated with the new operator.
+For Example:
+
+// CPP program to illustrate 
+// use of new keyword 
+#include<iostream> 
+using namespace std; 
+class bike
+{ 
+	string name; 
+	int num; 
+
+	public: 
+		bike(string a, int n) 
+		{ 
+			cout << "Constructor called" << endl; 
+			this ->name = a; 
+			this ->num = n; 
+		} 
+
+		void enter() 
+		{ 
+			cin>>name; 
+			cin>>num; 
+		} 
+
+		void display() 
+		{ 
+			cout << "Name: " << name << endl; 
+			cout << "Num: " << num << endl; 
+		} 
+}; 
+
+int main() 
+{ 
+	// Using new keyword 
+	bike *p = new bike("BMW", 2020); 
+	p->display(); 
+} 
+
+
+***********************
+
+c)      How an exception handled in C++? Give at least one suitable code example?
+
+Exceptions provide a way to transfer control from one part of a program to another, which will avoid the system crashing. C++ exception handling is built upon three keywords: try, catch, and throw.
+
+    throw − A program throws an exception when a problem shows up. This is done using a throw keyword.
+
+    catch − A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The catch keyword indicates the catching of an exception.
+
+    try − A try block identifies a block of code for which particular exceptions will be activated. It's followed by one or more catch blocks.
+
+For Example: 
+
+#include <iostream> 
+using namespace std; 
+
+int main() 
+{ 
+int x = -1; 
+
+cout << "Before try \n"; 
+try { 
+	cout << "Inside try \n"; 
+	if (x < 0) 
+	{ 
+		throw x; 
+		cout << "After throw (Never executed) \n"; 
+	} 
+} 
+catch (int x ) { 
+	cout << "Exception Caught \n"; 
+} 
+
+cout << "After catch (Will be executed) \n"; 
+return 0; 
+} 
+
+***************************
+
+d)     Differentiate between arrays & vectors? Discuss when we use vector instead of arrays and why?
+
+Arrays are used to store set of homogeniues datas in a single variable, instead of declaring separate variables for each value. For exapmle:
+
+int numbers[10]
+
+Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. 
+Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need of extending the array. 
+Removing the last element takes only constant time because no resizing happens. 
+Inserting and erasing at the beginning or in the middle is linear in time.
+
+*******************************
+
+e)     Differentiate between Late & Early binding?
+
+Binding
+*******
+Binding refers to the process of converting identifiers (such as variable and performance names) into addresses. 
+Binding is done for each variable and functions. For functions, it means that matching the call with the right function definition by the compiler. 
+It takes place either at compile time or at runtime.
+
+Early Binding (compile-time time polymorphism) As the name indicates, compiler (or linker) directly associate an address to the function call. It replaces the call with a machine language instruction that tells the mainframe to leap to the address of the function. 
+
+Late Binding : (Run time polymorphism) In this, the compiler adds code that identifies the kind of object at runtime then matches the call with the right function definition. This can be achieved by declaring a virtual function.
+

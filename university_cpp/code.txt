@@ -1,0 +1,152 @@
+    #include <iostream>  
+    using namespace std;  
+    #define NO_OF_STUDENTS 1 // Please change the number of students according to the need.
+ 
+       class SCA
+       {  
+       public:  
+       string names[NO_OF_STUDENTS];
+       int marks[NO_OF_STUDENTS];
+       int toper_pos;
+       void input_name_marks()
+       {
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               cout<<"Enter the name student: ";
+               cin>>names[i];
+               cout<<"Enter the Total mark of the student: ";
+               cin>>marks[i];
+           }
+       }
+       void sorting()
+       {
+           int k;
+           string n;
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               for (int j = 0;j< i;++j)
+               {
+                   if(marks[i] < marks[j])
+                   {
+                       k = marks[j];
+                       marks[j] = marks[i];
+                       marks[i] = k;
+                       n = names[j];
+                       names[j] = names[i];
+                       names[i]=n;
+                   }
+               }
+           }
+           
+       }
+       }; 
+       
+    class SCS 
+    {  
+       public:  
+       string names[NO_OF_STUDENTS];
+       int marks[NO_OF_STUDENTS];
+       int toper_pos;
+       void input_name_marks()
+       {
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               cout<<"Enter the name student: ";
+               cin>>names[i];
+               cout<<"Enter the Total mark of the student: ";
+               cin>>marks[i];
+           }
+       }
+        void sorting()
+       {
+           int k;
+           string n;
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               for (int j = 0;j< i;++j)
+               {
+                   if(marks[i] < marks[j])
+                   {
+                       k = marks[j];
+                       marks[j] = marks[i];
+                       marks[i] = k;
+                       n = names[j];
+                       names[j] = names[i];
+                       names[i]=n;
+                   }
+               }
+           }
+           
+       }
+       }; 
+       
+       class EEE 
+       {  
+       public:  
+       string names[NO_OF_STUDENTS];
+       int marks[NO_OF_STUDENTS];
+       int toper_pos;
+       void input_name_marks()
+       {
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               cout<<"Enter the name student: ";
+               cin>>names[i];
+               cout<<"Enter the Total mark of the student: ";
+               cin>>marks[i];
+           }
+       }
+        void sorting()
+       {
+           int k;
+           string n;
+           for (int i = 0 ;i <NO_OF_STUDENTS; ++i )
+           {
+               for (int j = 0;j< i;++j)
+               {
+                   if(marks[i] < marks[j])
+                   {
+                       k = marks[j];
+                       marks[j] = marks[i];
+                       marks[i] = k;
+                       n = names[j];
+                       names[j] = names[i];
+                       names[i]=n;
+                   }
+               }
+           }
+           
+       }
+       }; 
+       
+    class University : public SCA,public SCS, public EEE // inheriting all the calsses above defined
+    {  
+       public:  
+       void display_topers(SCA objsca, SCS objscs, EEE objeee)
+       {
+           cout<<"Toper in SCA department: ";
+           cout<<"\nName: "<<objsca.names[NO_OF_STUDENTS-1];
+           cout<<"\nMark: "<<objsca.marks[NO_OF_STUDENTS-1];
+           cout<<"\nToper in SCS department: ";
+           cout<<"\nName: "<<objscs.names[NO_OF_STUDENTS-1];
+           cout<<"\nMark: "<<objscs.marks[NO_OF_STUDENTS-1];
+           cout<<"\nToper in EEE department: ";
+           cout<<"\nName: "<<objeee.names[NO_OF_STUDENTS-1];
+           cout<<"\nMark: "<<objeee.marks[NO_OF_STUDENTS-1];
+           
+       }
+     }; 
+    int main(void) {  
+          University obj;
+          SCA obj_1;
+          SCS obj_2;
+          EEE obj_3;
+          obj_1.input_name_marks();
+          obj_2.input_name_marks();
+          obj_3.input_name_marks();
+          obj_1.sorting();
+          obj_2.sorting();
+          obj_3.sorting();
+          obj.display_topers(obj_1,obj_2,obj_3);
+        return 0;  
+    }  

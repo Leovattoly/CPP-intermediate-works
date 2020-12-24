@@ -1,0 +1,54 @@
+
+#include<iostream>
+#include <stdio.h>
+using namespace std;
+
+#define infants 2000  // Constant fare 
+#define adults 7500   
+#define children 5000  
+class MyAirways  {
+    public:
+       int no_of_adult_passenger;
+       int no_of_children_passenger;
+       int no_of_infants_passenger;
+       int flight_fare;
+       float total_fare;
+
+        void  fare_calculator(){   
+            flight_fare = (no_of_infants_passenger*infants)+ (no_of_children_passenger*children) +(no_of_adult_passenger*adults);
+            total_fare =flight_fare + flight_fare*.15;
+        }
+
+       void  fare_display(){   
+            cout<<"Total Flight Fare (including GST ): "<<total_fare;
+        }
+    
+    // Defining parameterized constructor
+    MyAirways(int a,int c, int i)
+    {
+        no_of_adult_passenger = a;
+        no_of_children_passenger = c;
+        no_of_infants_passenger = i;
+        
+    }
+};
+
+int main()
+{
+    int a,c,i;
+    cout<<"Welcome to MY AIRWAYS\n";
+    cout<<"======================\n";
+    cout<<"Enter the number of infants:";
+    cin>>i;
+    cout<<"Enter the numberof children:";
+    cin>>c;
+    cout<<"Enter the numberof adults:";
+    cin>>a;
+     // create object of MyAirways class
+    MyAirways obj1(a,c,i);
+    obj1.fare_calculator();
+    obj1.fare_display();
+    
+
+    return 0;
+}

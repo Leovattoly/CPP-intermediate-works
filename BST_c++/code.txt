@@ -1,0 +1,146 @@
+// C++ program to demonstrate insertion 
+// in a BST recursively. 
+#include <iostream> 
+using namespace std; 
+
+class BST 
+{ 
+	int data; 
+	BST *left, *right; 
+
+	public: 
+	
+	// Default constructor. 
+	BST(); 
+	
+	// Parameterized constructor. 
+	BST(int); 
+	
+	// Insert function. 
+	BST* Insert(BST *, int); 
+	
+	// Inorder traversal. 
+	void Inorder(BST *); 
+}; 
+
+// Default Constructor definition. 
+BST :: BST() : data(0), left(NULL), right(NULL){} 
+
+// Parameterized Constructor definition. 
+BST :: BST(int value) 
+{ 
+	data = value; 
+	left = right = NULL; 
+} 
+
+// Insert function definition. 
+BST* BST :: Insert(BST *root, int value) 
+{ 
+	if(!root) 
+	{ 
+		// Insert the first node, if root is NULL. 
+		return new BST(value); 
+	} 
+
+	// Insert data. 
+	if(value > root->data) 
+	{ 
+		// Insert right node data, if the 'value' 
+		// to be inserted is greater than 'root' node data. 
+		
+		// Process right nodes. 
+		root->right = Insert(root->right, value); 
+	} 
+	else
+	{ 
+		// Insert left node data, if the 'value' 
+		// to be inserted is greater than 'root' node data. 
+		
+		// Process left nodes. 
+		root->left = Insert(root->left, value); 
+	} 
+	
+	// Return 'root' node, after insertion. 
+	return root; 
+} 
+
+// Inorder traversal function. 
+// This gives data in sorted order. 
+void BST :: Inorder(BST *root) 
+{ 
+	if(!root) 
+	{ 
+		return; 
+	} 
+	Inorder(root->left); 
+	cout << root->data << endl; 
+	Inorder(root->right); 
+} 
+void swap(int *a, int *b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
+}
+// Function to partition the array on the basis of pivot element
+int partition(int array[], int low, int high) {
+  // Select the pivot element
+  int pivot = array[high];
+  int i = (low - 1);
+
+  // Put the elements smaller than pivot on the left 
+  // and greater than pivot on the right of pivot
+  for (int j = low; j < high; j++) {
+    if (array[j] <= pivot) {
+      i++;
+      swap(&array[i], &array[j]);
+    }
+  }
+  swap(&array[i + 1], &array[high]);
+  return (i + 1);
+}
+
+void quickSort(int array[], int low, int high) {
+  if (low < high) {
+    // Select pivot position and put all the elements smaller 
+    // than pivot on left and greater than pivot on right
+    int pi = partition(array, low, high);
+
+    // Sort the elements on the left of pivot
+    quickSort(array, low, pi - 1);
+
+    // Sort the elements on the right of pivot
+    quickSort(array, pi + 1, high);
+  }
+}
+
+// Driver code 
+int main() 
+{ 
+	BST b, *root = NULL; 
+	root = b.Insert(root, 0); 
+	int data[10];
+	int n;
+	cout<<"Enter the value of n : ";
+	cin>>n;
+	cout<<"Enter the Values: ";
+	for(int i=0;i<n;++i)
+	cin>>data[i];
+	quickSort(data,0,n-1);
+    cout<<"Sorted Array:\n";
+    for(int i=0;i<n;++i)
+    {
+        cout<<data[i];
+        cout<<"\n";
+    }
+    
+	for(int i=0;i<n;++i)
+    {
+        b.Insert(root, data[i]); // inserting data to BST
+    }
+    
+    cout<<"The Binary Search Tree :\n";
+    b.Inorder(root);  // Printing BST
+	return 0; 
+} 
+
+

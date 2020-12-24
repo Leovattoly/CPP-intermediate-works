@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+# define ROW 2
+# define COL 3
+
+void substraction_matrix(int A[ROW][COL],int B[ROW][COL],int C[ROW][COL])
+{
+    
+    for (int i = 0; i < ROW; i++)  
+        for (int j = 0; j < COL; j++)  
+            C[i][j] = A[i][j] - B[i][j];  
+}
+
+float avg_array(int C[ROW][COL])
+{
+    int total = 0;
+    float avg= 0.0;
+    for (int i = 0; i < ROW; i++)  
+        for (int j = 0; j < COL; j++)  
+            total = total+C[i][j];
+    avg = total /(ROW*COL);
+    return avg;
+}
+int main()
+{
+    int A[ROW][COL] = { {9,7,4 },  
+                    {4,5,8}};  
+  
+    int B[ROW][COL] = { {1,2,3 },  
+                    {1,2,6}};  
+    int C[ROW][COL] = { {0,0,0},  
+                        {0,0,0}};  
+    substraction_matrix(A,B,C);
+    cout<<"\n MATRIX C \n";
+    for (int i = 0; i < ROW; i++)  
+    {
+        for (int j = 0; j < COL; j++)
+        cout<<C[i][j]<<"\t";
+    cout<<"\n";
+    }
+    
+    cout<<"Average of Array: "<<avg_array(C);
+    
+
+    return 0;
+}

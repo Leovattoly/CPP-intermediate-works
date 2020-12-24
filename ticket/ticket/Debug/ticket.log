@@ -1,0 +1,3 @@
+﻿  Source.cpp
+d:\coursehero\ticket\ticket\source.cpp(15): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  ticket.vcxproj -> D:\CourseHero\ticket\Debug\ticket.exe

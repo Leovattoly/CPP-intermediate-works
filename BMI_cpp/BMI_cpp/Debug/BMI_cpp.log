@@ -1,0 +1,18 @@
+﻿  Source.cpp
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(34): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(40): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(43): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(43): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(46): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(46): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(49): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(49): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(52): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(52): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(55): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(55): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(58): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(58): error C2059: syntax error: '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(61): error C2143: syntax error: missing ':' before '...'
+d:\coursehero\bmi_cpp\bmi_cpp\source.cpp(61): error C2059: syntax error: '...'

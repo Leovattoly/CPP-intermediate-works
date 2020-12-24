@@ -1,0 +1,6 @@
+﻿  Source.cpp
+d:\coursehero\struct_references\struct_references\source.cpp(19): error C2059: syntax error: ']'
+d:\coursehero\struct_references\struct_references\source.cpp(23): error C2059: syntax error: ']'
+d:\coursehero\struct_references\struct_references\source.cpp(27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\coursehero\struct_references\struct_references\source.cpp(41): error C2561: 'main': function must return a value
+  d:\coursehero\struct_references\struct_references\source.cpp(32): note: see declaration of 'main'

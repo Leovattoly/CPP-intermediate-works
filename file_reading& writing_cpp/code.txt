@@ -1,0 +1,35 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+
+  char text[20] = {"abcdefghijklmn"}; // Defined character array
+
+  ofstream file;
+  // opening file 
+  file.open ("example.txt", ios::out );
+
+  // Writing on file
+  file.write (text,20);
+  file.close(); // closing file after writing
+  
+  // opening file for Reding
+  ifstream file_read;
+  file_read.open ("example.txt",ios::in );
+
+  // Reding from file
+    // Finding the size of data in the file
+    file_read.seekg (0, file_read.end);
+    int length = file_read.tellg();
+    file_read.seekg (0, file_read.beg);  
+    char * buffer = new char [length];
+    file_read.read (buffer,length);
+    cout<<"Content from the file example.txt : \n";
+    cout << buffer << endl;
+
+  //closing the file
+file_read.close();
+  return 0;
+}

@@ -1,0 +1,4 @@
+﻿  Source.cpp
+d:\coursehero\employee_base_class\employee_base_class\source.cpp(34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\coursehero\employee_base_class\employee_base_class\source.cpp(55): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Employee_base_class.vcxproj -> D:\CourseHero\Employee_base_class\Debug\Employee_base_class.exe

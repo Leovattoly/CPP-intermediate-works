@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstring> 
+using namespace std;
+
+int main()
+{
+  
+  string str_1 = "Object-Oriented Programming";
+  
+  cout<<"The giben string: "<<str_1;
+  // Reversing the string
+   string rev = string(str_1.rbegin(),str_1.rend()); 
+   cout<<"\nThe reversed string: "<<rev;
+   string str_2 = "CS-121";
+   // concatinating the reversed string with str_2
+   rev = rev + str_2;
+   cout<<"\nReversed string after concatenation: "<<rev;
+  
+   return 0;
+}
+
+**********************************************
+
+#include <iostream>
+#include <cstring> 
+using namespace std;
+
+int main()
+{
+  
+  char mystr1 [25];
+  char mystr2 [25];
+  
+  // write a statement to mystr1
+  strcpy(mystr1,"It's raining today");
+  cout<<"str1 :"<<mystr1;
+  
+  // statement for coping values of str1 into str2 
+  strcpy(mystr2,mystr1);
+  cout<<"\nstr2: "<<mystr2;
+  
+  // Length of str2
+  cout<<"\nLength of str2: "<<strlen(mystr2);
+   return 0;
+}
+
+*************************************
+
